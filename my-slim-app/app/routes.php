@@ -22,13 +22,13 @@ return function (App $app) {
         return $response;
     }); */
 	
-		$app->get('/', function ($request, $response) {
-			$view = Twig::fromRequest($request);
-			
-			return $view->render($response, 'home.html.twig', [
-				'name' => 'John Doe Junior',
-			]);
-		});
+	$app->get('/', function ($request, $response) {
+		$view = Twig::fromRequest($request);
+		
+		return $view->render($response, 'home.html.twig', [
+			'name' => 'John Doe Junior',
+		]);
+	});
 
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);
